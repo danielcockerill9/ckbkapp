@@ -1,0 +1,360 @@
+/*
+ * Global styles for the "Be Your Best Cook" landing page.
+ *
+ * This stylesheet defines the colour palette, typography and layouts used
+ * throughout the site. It strives to honour the warm, inviting aesthetic
+ * of the provided reference while ensuring everything is responsive and
+ * accessible across devices. Variables are used to centralise colours
+ * and fonts so that tweaking the design is straightforward.
+ */
+
+/* CSS variables for theming */
+:root {
+  --accent: #e76f51; /* warm orange accent reminiscent of the original design */
+  --accent-dark: #d1583e; /* darker shade for hover states */
+  --dark: #1b1b1b; /* primary dark tone for overlays and headings */
+  --light-bg: #faf7f2; /* off‑white background for contrast */
+  --text-colour: #333333; /* neutral text colour for readability */
+  --muted: #666666; /* muted text for secondary information */
+  --guardian-colour: #005689; /* approximate Guardian blue */
+  --ft-bg: #f2dac2; /* soft beige for FT logo */
+  --wired-bg: #000000; /* black background for WIRED logo */
+  --wired-colour: #ffffff; /* white text for WIRED logo */
+  --transition-speed: 0.3s;
+}
+
+/* Basic resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-colour);
+  background-color: var(--light-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  width: 100%;
+  padding: 4rem 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+#hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  background-image: url('assets/hero.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: brightness(0.7);
+  z-index: 1;
+}
+
+#hero .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 1rem;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+#hero .tagline {
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+}
+
+#hero .stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+#hero .stat-item {
+  text-align: center;
+}
+
+#hero .stat-item .number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+#hero .stat-item .label {
+  font-size: 0.9rem;
+  color: #e0d8d0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#hero .cta-btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #ffffff;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color var(--transition-speed) ease;
+}
+
+#hero .cta-btn:hover {
+  background-color: var(--accent-dark);
+}
+
+/* Features Section */
+#features {
+  background-color: #ffffff;
+}
+
+#features .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+#features .feature-item {
+  flex: 1 1 calc(25% - 2rem);
+  background-color: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+#features .feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+#features .feature-item .icon {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+#features .feature-item h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+#features .feature-item p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* Reviews Section */
+#reviews {
+  background-color: var(--light-bg);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+#reviews .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#reviews .review-block {
+  max-width: 600px;
+  text-align: center;
+}
+
+#reviews .stars {
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#reviews .quote {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-colour);
+}
+
+#reviews .quote .source {
+  font-weight: 600;
+  font-style: normal;
+  color: var(--accent);
+}
+
+/* Logos Section */
+#logos {
+  background-color: #ffffff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#logos .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+#logos .logo-text {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+#logos .guardian {
+  color: var(--guardian-colour);
+}
+
+#logos .ft {
+  background-color: var(--ft-bg);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  color: var(--dark);
+  font-weight: 700;
+}
+
+#logos .wired {
+  background-color: var(--wired-bg);
+  color: var(--wired-colour);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+/* Featured Books Section */
+#featured {
+  background-color: var(--light-bg);
+}
+
+#featured h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--dark);
+}
+
+#featured .books-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+#featured .book-card {
+  position: relative;
+  /* Use aspect-ratio to maintain a portrait orientation without hacks */
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  padding: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#featured .book-card .book-title {
+  z-index: 2;
+  font-size: 1.1rem;
+}
+
+/* Individual card colours */
+#featured .card-ethiopia {
+  background: linear-gradient(135deg, #542e1a, #a85d37);
+}
+
+#featured .card-italian {
+  background: linear-gradient(135deg, #972d15, #d66d51);
+}
+
+#featured .card-pastry {
+  background: linear-gradient(135deg, #b85b38, #eaa87a);
+}
+
+#featured .card-silver {
+  background: linear-gradient(135deg, #9c4e4e, #d89f9a);
+}
+
+/* Footer */
+footer {
+  background-color: #ffffff;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Responsive Rules */
+@media (max-width: 992px) {
+  #features .feature-item {
+    flex: 1 1 calc(50% - 2rem);
+  }
+  #featured .books-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #hero h1 {
+    font-size: 2.4rem;
+  }
+  #hero .stats {
+    gap: 1.5rem;
+  }
+  #features .feature-item {
+    flex: 1 1 100%;
+  }
+  #featured .books-grid {
+    grid-template-columns: 1fr;
+  }
+  #logos .container {
+    gap: 1.5rem;
+  }
+}
